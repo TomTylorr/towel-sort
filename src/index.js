@@ -3,15 +3,21 @@
 
 module.exports = function towelSort (matrix) {
   let newArr = [];
-  if (matrix == 0) {
-    return newArr;
-  }
   
   for (let i = 0; i < matrix.length; i++) {
-    newArr = (newArr.concat(matrix[i])).sort();
+    if (i % 2 == 0) {
+      newArr.push(matrix[i]);
+    } else {
+    	newArr.push(matrix[i].reverse())
+    }
+    
   }
 
-  return newArr;
+  newArr = newArr.reduce(function(prev, next) {
+    return prev.concat(next);
+  });
+
+	return newArr;
 }
 
 
