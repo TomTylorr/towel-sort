@@ -16,6 +16,11 @@ module.exports = function towelSort (matrix) {
   newArr = newArr.reduce(function(prev, next) {
     return prev.concat(next);
   });
+  
+  if (newArr.length == 0 || arguments == 0) {
+    return [];
+  }
+
 
 	return newArr;
 }
